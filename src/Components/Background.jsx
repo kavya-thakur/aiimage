@@ -27,7 +27,7 @@ export function GridBackgroundDemo() {
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black)]" />
 
       {/* Animation Keyframes */}
-      {/* <style>
+      <style>
         {`
           @keyframes ladderMotion {
             0% { transform: translateY(100%) translateX(0); opacity: 1; }
@@ -43,7 +43,7 @@ export function GridBackgroundDemo() {
             animation: ladderMotion 3s infinite linear;
           }
         `}
-      </style> */}
+      </style>
     </div>
   );
 }
