@@ -1,143 +1,75 @@
-// import React from "react";
-// import Home from "./Components/Home";
-// import { GridBackgroundDemo } from "./Components/Background";
-
-// const App = () => {
-//   return (
-//     <>
-//       <div className="relative min-h-screen bg-gray-100 overflow-hidden pb-5">
-//         {/* Background */}
-//         <div className="absolute inset-0 z-0">
-//           <GridBackgroundDemo />
-//         </div>
-
-//         {/* Foreground content */}
-//         <div className="relative z-10 max-w-7xl px-4 mx-auto flex flex-col items-center justify-center pt-30">
-//           <div className="text-center mb-8">
-//             <h1 className="text-4xl tracking-tight font-semibold capitalize text-gray-800">
-//               AI{" "}
-//               <span id="img" className="text-4xl text-[#EA2F14]">
-//                 Image
-//               </span>{" "}
-//               Enhancer
-//             </h1>
-//             <p className="text-sm mt-3 font-medium text-[#EA2F14]/60">
-//               Upload your image and let AI enhance it in seconds
-//             </p>
-//           </div>
-//           <Home />
-//           <div className="mt-10 text-sm text-gray-500">
-//             <p>Powered by @kavyathakur</p>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default App;
 import React from "react";
-import Home from "./Components/Home";
-import { GridBackgroundDemo } from "./Components/Background";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
+import Home from "./pages/Home";
 import { motion } from "framer-motion";
+import Navbar from "./Components/Navbar";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
-// Variants for text letter animation
-const letterVariant = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.06,
-      type: "spring",
-      stiffness: 500,
-      damping: 30,
-    },
-  }),
-};
-
-// Variant for other components
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1, ease: "easeOut" },
-  },
-};
+function Footer() {
+  const location = useLocation();
+  const links = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
+  ];
+  return (
+    <motion.footer
+      className="w-full mt-10 pt-8 pb-4 px-4 text-center shadow-lg backdrop-blur-md"
+      style={{ background: "var(--footer-bg)" }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 1.5 }}
+    >
+      <nav className="flex justify-center gap-8 mb-2">
+        {links.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            className={`relative text-base md:text-lg font-semibold text-[var(--footer-text)] px-2 py-1 transition-colors duration-300 ${
+              location.pathname === link.to
+                ? "gradient-text"
+                : "hover:gradient-text"
+            }`}
+          >
+            <span className="relative group">
+              {link.label}
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-[#3a8dde] to-[#6f3ad6] rounded-full transition-all duration-500 group-hover:w-full"></span>
+            </span>
+          </Link>
+        ))}
+      </nav>
+      <p className="text-xs" style={{ color: "var(--footer-text)" }}>
+        &copy; {new Date().getFullYear()}{" "}
+        <span className="font-bold gradient-text">KavyaAI</span> — All rights
+        reserved.
+      </p>
+    </motion.footer>
+  );
+}
 
 const App = () => {
-  const imageText = "Image".split("");
-
   return (
-    <div className="relative min-h-auto bg-gray-100 overflow-hidden pb-5">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <GridBackgroundDemo />
+    <Router>
+      <div className=" min-h-screen overflow-hidden flex flex-col justify-between px-4">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
 
-      {/* Foreground content */}
-      <div className="relative z-10 max-w-7xl px-4 mx-auto flex flex-col items-center justify-center pt-30">
-        {/* Heading Section */}
-        <motion.div
-          className="text-center mb-8"
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.h1
-            className="text-4xl tracking-tight font-semibold capitalize text-gray-800"
-            variants={fadeUp}
-          >
-            AI{" "}
-            <span className="text-[#EA2F14] inline-block">
-              {imageText.map((char, i) => (
-                <motion.span
-                  id="img"
-                  key={i}
-                  custom={i}
-                  variants={letterVariant}
-                  initial="hidden"
-                  animate="visible"
-                  className="inline-block"
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </span>{" "}
-            Enhancer
-          </motion.h1>
-
-          <motion.p
-            className="text-sm mt-3 font-medium text-[#EA2F14]/60"
-            variants={fadeUp}
-            transition={{ delay: 0.6 }}
-          >
-            Upload your image and let AI enhance it in seconds
-          </motion.p>
-        </motion.div>
-
-        {/* Home Component Animation */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <Home />
-        </motion.div>
+      <div className="px-4 bg-[#E7E7E2]">
+        <Footer />
       </div>
-      <motion.footer
-        className="w-full border-t border-gray-300 mt-20 pt-6 px-4 text-center"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
-      >
-        <p className="text-sm text-gray-600">
-          Turning pixels into perfection — with a touch of{" "}
-          <span className="text-[#EA2F14] font-semibold">AI magic</span>.
-        </p>
-        <p className="text-xs text-gray-800 mt-1">Crafted by @kavyathakur</p>
-      </motion.footer>
-    </div>
+    </Router>
   );
 };
 

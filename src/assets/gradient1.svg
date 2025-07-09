@@ -1,0 +1,11 @@
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400">
+            <!-- https://grabient.com/HQVgzAHANKAMCMMQHYCcMBsAmRxkdiQBZkZ5VTh4NpgdSiqJ0thZUipCBaWKsXDWjxgYIum4j4sDEA/newest?style=linearGradient -->
+            <defs>
+              <linearGradient id="gradient" x1="0.000" y1="0.500" x2="1.000" y2="0.500">
+        <stop offset="0.000" stop-color="rgb(198, 227, 190)" /><stop offset="0.030" stop-color="rgb(195, 228, 193)" /><stop offset="0.061" stop-color="rgb(192, 228, 196)" /><stop offset="0.091" stop-color="rgb(189, 227, 199)" /><stop offset="0.121" stop-color="rgb(185, 227, 201)" /><stop offset="0.152" stop-color="rgb(182, 226, 203)" /><stop offset="0.182" stop-color="rgb(178, 225, 205)" /><stop offset="0.212" stop-color="rgb(174, 224, 207)" /><stop offset="0.242" stop-color="rgb(169, 223, 208)" /><stop offset="0.273" stop-color="rgb(165, 221, 209)" /><stop offset="0.303" stop-color="rgb(160, 219, 210)" /><stop offset="0.333" stop-color="rgb(155, 217, 210)" /><stop offset="0.364" stop-color="rgb(150, 215, 210)" /><stop offset="0.394" stop-color="rgb(145, 212, 210)" /><stop offset="0.424" stop-color="rgb(140, 209, 210)" /><stop offset="0.455" stop-color="rgb(135, 206, 209)" /><stop offset="0.485" stop-color="rgb(130, 203, 208)" /><stop offset="0.515" stop-color="rgb(124, 200, 206)" /><stop offset="0.545" stop-color="rgb(119, 196, 205)" /><stop offset="0.576" stop-color="rgb(113, 192, 203)" /><stop offset="0.606" stop-color="rgb(108, 188, 201)" /><stop offset="0.636" stop-color="rgb(102, 184, 198)" /><stop offset="0.667" stop-color="rgb(97, 180, 196)" /><stop offset="0.697" stop-color="rgb(91, 175, 193)" /><stop offset="0.727" stop-color="rgb(86, 171, 189)" /><stop offset="0.758" stop-color="rgb(80, 166, 186)" /><stop offset="0.788" stop-color="rgb(75, 161, 182)" /><stop offset="0.818" stop-color="rgb(70, 156, 178)" /><stop offset="0.848" stop-color="rgb(65, 151, 174)" /><stop offset="0.879" stop-color="rgb(60, 146, 170)" /><stop offset="0.909" stop-color="rgb(55, 140, 166)" /><stop offset="0.939" stop-color="rgb(50, 135, 161)" /><stop offset="0.970" stop-color="rgb(45, 129, 156)" /><stop offset="1.000" stop-color="rgb(40, 124, 151)" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="800" height="400" fill="url(#gradient)" />
+          </svg>
+        
