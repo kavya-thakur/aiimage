@@ -1,12 +1,10 @@
 import React, { useLayoutEffect, useRef } from "react";
 import {
   ShieldCheck,
-  Zap,
   ImagePlus,
   Cpu,
   Star,
   Upload,
-  Brush,
   BrainCircuit,
   Lock,
   Award,
