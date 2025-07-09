@@ -15,16 +15,6 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import Testimonial from "../Components/Testimonial";
-import dylanProfile from "../assets/dylan_profile.webp";
-import pieterProfile from "../assets/Pieter_profile.webp";
-import gradient from "../assets/gradient1.svg";
-
-const team = [
-  { name: "Pieter Pattyn", role: "Co-Founder & AI Lead", image: pieterProfile },
-  { name: "Dylan Kim", role: "Co-Founder & Product", image: dylanProfile },
-  { name: "Kavya S.", role: "Frontend Engineer", image: null },
-];
 
 const trustedLogos = [
   <svg key="1" width="60" height="24">
@@ -295,12 +285,6 @@ const About = () => {
             developers, marketers, and more.
           </p>
         </div>
-        
-      </div>
-
-      {/* Testimonials */}
-      <div className="mt-24">
-        <Testimonial />
       </div>
     </section>
   );

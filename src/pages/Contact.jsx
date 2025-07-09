@@ -20,7 +20,7 @@ const Contact = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="min-h-[70vh] flex flex-col items-center justify-center px-4 py-16"
+      className="min-h-[70vh] flex flex-col items-center justify-center px-4 py-16 mt-10"
     >
       <motion.h1
         className="text-4xl md:text-6xl font-extrabold gradient-text mb-6 text-center tracking-tight"

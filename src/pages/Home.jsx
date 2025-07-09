@@ -10,7 +10,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import SplitType from "split-type";
-import Testimonial from "../Components/Testimonial";
 
 const Home = () => {
   const [uploadImage, setUploadImage] = useState(null);
@@ -32,9 +31,10 @@ const Home = () => {
     }
   };
   useEffect(() => {
+    if (!mainHeadingRef.current || !paraRef.current) return;
+
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    // --- Split heading into WORDS not CHARS
     const splitHeading = new SplitType(mainHeadingRef.current, {
       types: "words",
       tagName: "span",
@@ -44,16 +44,15 @@ const Home = () => {
       const wrapper = document.createElement("div");
       wrapper.style.display = "inline-block";
       wrapper.style.overflow = "hidden";
-      wrapper.style.verticalAlign = "bottom";      // Prevent baseline clipping
-      wrapper.style.lineHeight = "1.2";            // Give enough vertical space
-      wrapper.style.paddingBottom = "2px";         // Optional: fix minor cuts
-      
+      wrapper.style.verticalAlign = "bottom";
+      wrapper.style.lineHeight = "1.2";
+      wrapper.style.paddingBottom = "2px";
+
       word.parentNode.insertBefore(wrapper, word);
       wrapper.appendChild(word);
       return word;
     });
 
-    // --- Split paragraph into LINES
     const splitPara = new SplitType(paraRef.current, {
       types: "lines",
       tagName: "span",
@@ -68,7 +67,6 @@ const Home = () => {
       return line;
     });
 
-    // --- Animate in sequence
     tl.fromTo(
       headingWords,
       { y: 50, opacity: 0 },
@@ -153,9 +151,6 @@ const Home = () => {
       </div>
       <div className="px-4 ">
         <EnhanceOverview />
-      </div>
-      <div className="px-4 bg-[#E7E7E2] rounded-3xl max-w-7xl mx-auto">
-        <Testimonial />
       </div>
     </>
   );
