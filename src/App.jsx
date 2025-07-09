@@ -12,11 +12,12 @@ import Navbar from "./Components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./Components/Footer";
-
+import ScrollToTop from "./Components/Scrollontop";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className=" min-h-screen overflow-hidden flex flex-col justify-between px-4">
         <Navbar />
         <Routes>
