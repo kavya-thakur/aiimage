@@ -79,7 +79,7 @@ const Navbar = () => {
       <div className="md:hidden flex justify-center relative">
         <nav className="flex justify-between items-center py-4 px-4 backdrop-blur-xl bg-white/80 rounded-2xl fixed top-5 w-[88%] z-50 shadow-lg border border-gray-100">
           <div className="text-xl font-bold text-gray-800">
-            Kav<span className="heading gradient-text">AI</span>
+            Miki  <span className="heading text-[#3a8dde]">AI</span>
           </div>
 
           {/* Hamburger to Cross Animated */}
